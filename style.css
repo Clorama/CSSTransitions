@@ -1,0 +1,19 @@
+body {
+  background-color: #222;
+  padding:2em;
+  margin:0;
+}
+
+.block {
+  display: block;
+  box-sizing: border-box;
+  background-color: #d33131;
+  color: #6f6f6f;
+  font-family: sans-serif;
+  margin-bottom: 2em;
+  height: 200px;
+}
+
+.block:last-of-type {
+  margin-bottom: 0;
+}

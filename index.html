@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--This is a doctype. Every HTML file should have one.
+Basically you only need this one nowadays, as this means HTML5 (what you're learning here)
+for modern browsers but old browsers still pick up that your file is some kind of HTML.-->
+<html>
+<!-- Here the HTML starts, so we put an opening <html> tag here. -->
+<head>
+<!-- ... -->
+  <style type="text/css">
+
+    .box{
+      margin: 2em;
+      padding: 2em 2em 4em 2em;
+      box-sizing: border-box;
+      width:200px;
+      height:200px;
+      background-color: gray;
+       -webkit-box-shadow: 0px 3px 0px 10px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+       -moz-box-shadow:    0px 3px 0px 10px #ccc;  /* Firefox 3.5 - 3.6 */ 
+      box-shadow:         0px 3px 0px 10px #ccc;
+    }
+
+
+
+    .box:hover {
+      background-color: purple;
+      -ms-transform: rotateX(180deg) rotateY(180deg);
+      -webkit-transform: rotateX(180deg) rotateY(180deg);
+      transform: rotateX(180deg) rotateY(180deg);
+      transition: 1s;
+    }
+
+    .changeonhover {
+      color: white;
+      background-color: green;
+      text-align: center;
+      width: 300px;
+      height: 200px;
+      font-family: sans-serif;
+      border: 5px solid black;
+      transition: 1s all;
+    }
+    .changeonhover:hover {
+      background-color: blue;
+      width: 600px;
+      height: 300px;
+        -ms-transform:  translateX(40px) rotate(5deg) skewY(5deg) scale(0.5);
+      -webkit-transform: translateX(40px) rotate(5deg) skewY(5deg) scale(0.5);
+     transform: translateX(40px) rotate(5deg) skewY(5deg) scale(0.5);
+
+
+    }
+
+    .circle {
+      margin: 2em;
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      border-style: dashed;
+      border-color: green;
+      border-width: .5em;
+    }
+    
+    .circle:hover {
+      
+      background-color: red;
+      -webkit-transform: translateX(80px) translateY(100px) rotate(60deg) scale(2);
+      -ms-transform: translateX(80px) translateY(100px) rotate(60deg) scale(2);
+      transform: translateX(80px) translateY(100px) rotate(60deg) skewY(5deg) scale(2);
+      transition: 2s;
+
+    }
+
+ .galaxy {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid yellow;
+  margin: 200px auto 0 auto;
+  -webkit-animation: rotating 2.5s linear infinite;
+          animation: rotating 2.5s linear infinite;
+  position: relative;
+}
+
+.galaxy:hover {
+  border: 2px solid green;
+}
+
+.galaxy::before,
+.galaxy::after{
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.galaxy::before {
+  width: 50px;
+  height: 50px;
+  background-color: orange;
+  top: -25px;
+  left: 75px;
+}
+
+.galaxy::after {
+  width: 40px;
+  height: 40px;
+  background-color: blue;
+  left: 80px;
+  top: 80px;
+}
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+}
+@keyframes rotation:hover {
+   from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+    /*.centercircle {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+    }
+
+    .largecircle {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      border-color: blue;
+      border-width: .2em;
+      border-style: solid;
+    }
+
+    .movingcircle {
+      border-radius: 50%;
+      width: 25px;
+      height:25px;
+      background-color: orange;
+    } */
+
+    .smileyface {
+      border-radius: 50%;
+      border: .2em solid black;
+      background-color: yellow;
+      width: 75px;
+      height: 75px;
+      padding:10px;
+      position:relative;
+
+    }
+
+
+
+    .lefteye {
+      border-radius: 50%;
+      background-color: black; 
+      width:10px;
+      height:15px;
+      left:10%;
+         }
+    .righteye {
+      border-radius: 50%;
+      background-color: black; 
+      width:10px;
+      height:15px;
+      right:10%;
+
+    }
+.lefteye, .righteye {
+  position: absolute;
+  top:20px;
+}
+
+.smile {
+  position:absolute;
+  bottom: 25px;
+  width: 80%;
+  height:3px;
+  background: black;
+}
+
+.smileyface:hover ~ .smile {
+  transition: 1s ;
+  border-top-radius: 10%;
+  border-bottom-right-radius: -10%;
+  border-bottom-right-radius: -10%;
+}
+
+
+
+    .display div{
+      display: inline-block;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+  <div class="display">
+    <div class="changeonhover">Eek! cooties!! </div>
+    <div class="circle"></div>
+    <div class="box"></div>
+    
+      <div class="galaxy">
+       
+      </div>
+    <div class="smileyface">
+      <div class="lefteye"></div>
+      <div class="righteye"></div>
+      <div class="smile"></div>
+    </div>  
+  </div>
+
+</body>
+</body>
+</html>
+<!-- And in the end we close the <body> and <html> tag. -->
